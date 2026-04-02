@@ -1,0 +1,1 @@
+execute as @e[type=block_display,tag=!WormStart] run function worm:tickworm
