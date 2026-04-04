@@ -1,4 +1,4 @@
-data modify entity @s text set value "High"
+# Teleports entity to the ground
 execute if block ~ ~ ~ #worm:transparent if block ~ ~-1 ~ #worm:transparent run tp @s ~ ~-1 ~
 execute if block ~ ~ ~ #worm:transparent if block ~ ~-1 ~ #worm:transparent run tp @s ~ ~-1 ~
 execute if block ~ ~ ~ #worm:transparent if block ~ ~-1 ~ #worm:transparent run tp @s ~ ~-1 ~
