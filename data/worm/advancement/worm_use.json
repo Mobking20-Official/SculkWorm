@@ -1,0 +1,18 @@
+{
+    "criteria": {
+        "used": {
+            "trigger": "using_item",
+            "conditions": {
+                "item": {
+                    "items": "goat_horn",
+                    "components": {
+                        "item_name": "Horn of Madness"
+                    }
+                }
+            }
+        }
+    }, 
+    "rewards": {
+        "function": "worm:attack"
+    }
+}

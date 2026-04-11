@@ -1,41 +1,51 @@
 # Basic initialization for block displays
 data modify entity @s Rotation set from entity @p Rotation
-function worm:movetoground
 tag @s add WormStart
-data merge entity @s {block_state:{Name:sculk_shrieker},transformation:{scale:[4f,4f,4f]}}
+data merge entity @s {block_state:{Name:sculk_shrieker},transformation:{scale:[4f,4f,4f],translation:[0f,-10f,0f]},start_interpolation:-1}
 schedule function worm:initworms 2t
 
 # Create list of points by summoning markers
 data modify entity @s data.points set value []
-tp @s ^ ^ ^-9
-execute positioned 0 0 0 positioned ^ ^-3 ^-9 rotated as @p summon marker run function worm:waypoint
-scoreboard players set #angle worm -90
-execute positioned 0 0 0 positioned ^ ^ ^-9 rotated as @p summon marker run function worm:waypoint
-scoreboard players set #angle worm -72
-execute positioned 0 0 0 positioned ^ ^2.8 ^-8.6 rotated as @p summon marker run function worm:waypoint
-scoreboard players set #angle worm -54
-execute positioned 0 0 0 positioned ^ ^5.3 ^-7.3 rotated as @p summon marker run function worm:waypoint
-scoreboard players set #angle worm -36
-execute positioned 0 0 0 positioned ^ ^7.3 ^-5.3 rotated as @p summon marker run function worm:waypoint
-scoreboard players set #angle worm -18
-execute positioned 0 0 0 positioned ^ ^8.6 ^-2.8 rotated as @p summon marker run function worm:waypoint
+tp @s @p
+function worm:movetoground
+data modify entity @s Rotation set value [0f,0f]
 scoreboard players set #angle worm 0
-execute positioned 0 0 0 positioned ^ ^9 ^ rotated as @p summon marker run function worm:waypoint
-scoreboard players set #angle worm 18
-execute positioned 0 0 0 positioned ^ ^8.6 ^2.8 rotated as @p summon marker run function worm:waypoint
-scoreboard players set #angle worm 36
-execute positioned 0 0 0 positioned ^ ^7.3 ^5.3 rotated as @p summon marker run function worm:waypoint
-scoreboard players set #angle worm 54
-execute positioned 0 0 0 positioned ^ ^5.3 ^7.3 rotated as @p summon marker run function worm:waypoint
-scoreboard players set #angle worm 72
-execute positioned 0 0 0 positioned ^ ^2.8 ^8.6 rotated as @p summon marker run function worm:waypoint
-scoreboard players set #angle worm 90
-execute positioned 0 0 0 positioned ^ ^ ^9 rotated as @p summon marker run function worm:waypoint
+execute positioned 0 0 0 positioned ^ ^-3 ^-9 summon marker run function worm:waypoint
+scoreboard players set #angle worm 0
+execute positioned 0 0 0 positioned ^ ^ ^-9 summon marker run function worm:waypoint
+scoreboard players set #angle worm -18
+execute positioned 0 0 0 positioned ^ ^2.8 ^-8.6 summon marker run function worm:waypoint
+scoreboard players set #angle worm -36
+execute positioned 0 0 0 positioned ^ ^5.3 ^-7.3 summon marker run function worm:waypoint
+scoreboard players set #angle worm -54
+execute positioned 0 0 0 positioned ^ ^7.3 ^-5.3 summon marker run function worm:waypoint
+scoreboard players set #angle worm -72
+execute positioned 0 0 0 positioned ^ ^8.6 ^-2.8 summon marker run function worm:waypoint
+scoreboard players set #angle worm -90
+execute positioned 0 0 0 positioned ^ ^9 ^ summon marker run function worm:waypoint
+scoreboard players set #angle worm -108
+execute positioned 0 0 0 positioned ^ ^8.6 ^2.8 summon marker run function worm:waypoint
+scoreboard players set #angle worm -126
+execute positioned 0 0 0 positioned ^ ^7.3 ^5.3 summon marker run function worm:waypoint
+scoreboard players set #angle worm -144
+execute positioned 0 0 0 positioned ^ ^5.3 ^7.3 summon marker run function worm:waypoint
+scoreboard players set #angle worm -162
+execute positioned 0 0 0 positioned ^ ^2.8 ^8.6 summon marker run function worm:waypoint
+scoreboard players set #angle worm -180
+execute positioned 0 0 0 positioned ^ ^ ^9 summon marker run function worm:waypoint
+scoreboard players set #angle worm -180
+execute positioned 0 0 0 positioned ^ ^-5 ^9 summon marker run function worm:waypoint
 
 scoreboard players set @s worm.timer 0
 
-execute summon block_display run function worm:innit_section {timer:-20,block:sculk_catalyst,scale:3}
+execute summon block_display run function worm:innit_section {timer:-10,block:sculk_catalyst,scale:3}
+execute summon block_display run function worm:innit_section {timer:-20,block:sculk,scale:2}
+execute summon block_display run function worm:innit_section {timer:-30,block:sculk,scale:2}
 execute summon block_display run function worm:innit_section {timer:-40,block:sculk,scale:2}
+execute summon block_display run function worm:innit_section {timer:-50,block:sculk,scale:2}
 execute summon block_display run function worm:innit_section {timer:-60,block:sculk,scale:2}
+execute summon block_display run function worm:innit_section {timer:-70,block:sculk,scale:2}
 execute summon block_display run function worm:innit_section {timer:-80,block:sculk,scale:2}
-execute summon block_display run function worm:innit_section {timer:-100,block:sculk_sensor,scale:1}
+execute summon block_display run function worm:innit_section {timer:-90,block:sculk,scale:2}
+execute summon block_display run function worm:innit_section {timer:-100,block:sculk,scale:2}
+execute summon block_display run function worm:innit_section {timer:-110,block:sculk_sensor,scale:1}
