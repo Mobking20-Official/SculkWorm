@@ -1,6 +1,10 @@
 # Handles timer
 scoreboard players operation #temp worm = @s worm.timer
 scoreboard players operation #temp worm %= #wormdelay worm
+# 
+scoreboard players operation #temp2 worm = @s worm.timer
+scoreboard players operation #temp2 worm /= #wormdelay worm
+ particle block{block_state:{Name:sculk}} ^ ^-0.5 ^-5 1 1 1 0 20
 scoreboard players add @s worm.timer 1
 execute if score @s worm.timer matches ..-1 run return 0
 # Only run every #wormdelay ticks
