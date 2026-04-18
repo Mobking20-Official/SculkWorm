@@ -8,32 +8,33 @@ schedule function worm:initworms 2t
 data modify entity @s data.points set value []
 tp @s @p
 function worm:movetoground
+execute positioned 0 0 0 positioned ^1 ^ ^ summon marker run function worm:axis_point
 data modify entity @s Rotation set value [0f,0f]
-scoreboard players set #angle worm 0
+scoreboard players set #angle worm 10000
 execute positioned 0 0 0 positioned ^ ^-3 ^-9 summon marker run function worm:waypoint
-scoreboard players set #angle worm 0
+scoreboard players set #angle worm 10000
 execute positioned 0 0 0 positioned ^ ^ ^-9 summon marker run function worm:waypoint
-scoreboard players set #angle worm -18
+scoreboard players set #angle worm 2000
 execute positioned 0 0 0 positioned ^ ^2.8 ^-8.6 summon marker run function worm:waypoint
-scoreboard players set #angle worm -36
+scoreboard players set #angle worm 900
 execute positioned 0 0 0 positioned ^ ^5.3 ^-7.3 summon marker run function worm:waypoint
-scoreboard players set #angle worm -54
+scoreboard players set #angle worm 600
 execute positioned 0 0 0 positioned ^ ^7.3 ^-5.3 summon marker run function worm:waypoint
-scoreboard players set #angle worm -72
+scoreboard players set #angle worm 300
 execute positioned 0 0 0 positioned ^ ^8.6 ^-2.8 summon marker run function worm:waypoint
-scoreboard players set #angle worm -90
+scoreboard players set #angle worm 100
 execute positioned 0 0 0 positioned ^ ^9 ^ summon marker run function worm:waypoint
-scoreboard players set #angle worm -108
+scoreboard players set #angle worm 70
 execute positioned 0 0 0 positioned ^ ^8.6 ^2.8 summon marker run function worm:waypoint
-scoreboard players set #angle worm -126
+scoreboard players set #angle worm 50
 execute positioned 0 0 0 positioned ^ ^7.3 ^5.3 summon marker run function worm:waypoint
-scoreboard players set #angle worm -144
+scoreboard players set #angle worm 36
 execute positioned 0 0 0 positioned ^ ^5.3 ^7.3 summon marker run function worm:waypoint
-scoreboard players set #angle worm -162
+scoreboard players set #angle worm 18
 execute positioned 0 0 0 positioned ^ ^2.8 ^8.6 summon marker run function worm:waypoint
-scoreboard players set #angle worm -180
+scoreboard players set #angle worm 0
 execute positioned 0 0 0 positioned ^ ^ ^9 summon marker run function worm:waypoint
-scoreboard players set #angle worm -180
+scoreboard players set #angle worm 0
 execute positioned 0 0 0 positioned ^ ^-5 ^9 summon marker run function worm:waypoint
 
 scoreboard players set @s worm.timer 0
