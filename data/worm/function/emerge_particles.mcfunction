@@ -1,0 +1,1 @@
+$execute positioned ~0.5 ~ ~0.5 run particle block{block_state:{Name:sculk}} ~$(x) ~$(y) ~$(z) 1 1 1 0 20

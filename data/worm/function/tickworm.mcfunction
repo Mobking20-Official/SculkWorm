@@ -4,7 +4,14 @@ scoreboard players operation #temp worm %= #wormdelay worm
 # 
 scoreboard players operation #temp2 worm = @s worm.timer
 scoreboard players operation #temp2 worm /= #wormdelay worm
- particle block{block_state:{Name:sculk}} ^ ^-0.5 ^-5 1 1 1 0 20
+data modify storage worm:macro temp.x set from entity @s data.points[1].translation[0]
+data modify storage worm:macro temp.y set from entity @s data.points[1].translation[1]
+data modify storage worm:macro temp.z set from entity @s data.points[1].translation[2]
+execute if score #temp2 worm matches 0..1 run function worm:emerge_particles with storage worm:macro temp
+data modify storage worm:macro temp.x set from entity @s data.points[11].translation[0]
+data modify storage worm:macro temp.y set from entity @s data.points[11].translation[1]
+data modify storage worm:macro temp.z set from entity @s data.points[11].translation[2]
+execute if score #temp2 worm matches 11 run function worm:emerge_particles with storage worm:macro temp
 scoreboard players add @s worm.timer 1
 execute if score @s worm.timer matches ..-1 run return 0
 # Only run every #wormdelay ticks
