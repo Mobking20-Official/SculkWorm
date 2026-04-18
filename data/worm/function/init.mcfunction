@@ -38,14 +38,14 @@ execute positioned 0 0 0 positioned ^ ^-5 ^9 summon marker run function worm:way
 
 scoreboard players set @s worm.timer 0
 
-execute summon block_display run function worm:innit_section {timer:-10,block:sculk_catalyst,scale:3}
-execute summon block_display run function worm:innit_section {timer:-20,block:sculk,scale:2}
-execute summon block_display run function worm:innit_section {timer:-30,block:sculk,scale:2}
-execute summon block_display run function worm:innit_section {timer:-40,block:sculk,scale:2}
-execute summon block_display run function worm:innit_section {timer:-50,block:sculk,scale:2}
-execute summon block_display run function worm:innit_section {timer:-60,block:sculk,scale:2}
-execute summon block_display run function worm:innit_section {timer:-70,block:sculk,scale:2}
-execute summon block_display run function worm:innit_section {timer:-80,block:sculk,scale:2}
-execute summon block_display run function worm:innit_section {timer:-90,block:sculk,scale:2}
-execute summon block_display run function worm:innit_section {timer:-100,block:sculk,scale:2}
-execute summon block_display run function worm:innit_section {timer:-110,block:sculk_sensor,scale:1}
+execute summon block_display run function worm:innit_section {timer:-1,block:sculk_catalyst,scale:3}
+execute summon block_display run function worm:innit_section {timer:-2,block:sculk,scale:2}
+execute summon block_display run function worm:innit_section {timer:-3,block:sculk,scale:2}
+execute summon block_display run function worm:innit_section {timer:-4,block:sculk,scale:2}
+execute summon block_display run function worm:innit_section {timer:-5,block:sculk,scale:2}
+execute summon block_display run function worm:innit_section {timer:-6,block:sculk,scale:2}
+execute summon block_display run function worm:innit_section {timer:-7,block:sculk,scale:2}
+execute summon block_display run function worm:innit_section {timer:-8,block:sculk,scale:2}
+execute summon block_display run function worm:innit_section {timer:-9,block:sculk,scale:2}
+execute summon block_display run function worm:innit_section {timer:-10,block:sculk,scale:2}
+execute summon block_display run function worm:innit_section {timer:-11,block:sculk_sensor,scale:1}
