@@ -1,0 +1,1 @@
+$execute positioned ~$(x) ~$(y) ~$(z) as @e[distance=..3.5,tag=!SculkFF] run damage @s 100 sonic_boom
